@@ -95,7 +95,24 @@
         <!-- Slide-out panel content goes here -->
       </div>
     </div>
+    <div class="embed-container" id="embed-container"></div>
 
+    <script>
+        // Function to set the embed URL
+        function setEmbedUrl(embedUrl) {
+            const embedContainer = document.getElementById('embed-container');
+            const iframe = document.createElement('iframe');
+            iframe.width = '100%';
+            iframe.height = '600px';
+            iframe.src = embedUrl;
+            iframe.frameBorder = '0';
+            iframe.allowFullscreen = true;
+            embedContainer.appendChild(iframe);
+        }
+
+        // Example: Call setEmbedUrl with the generated embed URL
+        setEmbedUrl('https://us-east-1.quicksight.aws.amazon.com/embedding/27c809e04c624e24a698551f47186eaf/q/search/nre/j07evgpMbrLBPAWqVahjYaztpls9InMD?isauthcode=true&identityprovider=quicksight&code=AYABeIBb4D_JHvj3H6N42hYse9YAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4xtoTZf7IGoPQKGWjcNLglYg8fHKEoB_X6wbByfSPUT0BymSYoWf2hp3D076-G166-gAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDN35w-SiLTf6yWhhlwIBEIA7wnyJVSFNg7hfQbAH3AkwoLFO4CIkc5E_45VWb26ohP8u7kba6tenpHqzZUs6aBGZlfO_5D8jzDfJSMICAAAAAAwAABAAAAAAAAAAAAAAAAAAIFoIwDXs98iCau_aM2vgj_____8AAAABAAAAAAAAAAAAAAABAAAAoS6Tz3PEBQtHEfKTjIOVVEfmuSLA5IVWwsEVlPXVlVRC_irXqDZW9RFKUmPSG3ThjaYj0JtUhpzpihlVoHCeLYQt1RbB2-pqx1Nt1vcPEsErZmRz3yeqo8NLSkXqo-m-FThyJ4OSEnmM1kao9Jmg3y6ZT4gbgsVcU0xKVkMuTllzPH3_1HFQtfGq85WKHKFwdKKMwdAUX-j0e-wq_fR0yxsMxxloU8zEvYNRHtFSbd3_Jg%3D%3D');
+    </script>
     <script>
       function togglePanel() {
         const panel = document.getElementById('slideOutPanel');
