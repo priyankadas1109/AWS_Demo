@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vanna.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@350&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" type="text/javascript"></script>
+    <title>ADEPT.AI</title>
+    <script type="module" crossorigin src="/assets/index-2dc047a4.js"></script>
+    <link rel="stylesheet" href="/assets/index-a3ae634d.css">
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto Slab', serif;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 10px solid #ccc;
+        padding: 0px 0; /* Adjust padding */
+      }
+
+      img.logo {
+        width: 250px;
+        margin: 5px 0;
+      }
+
+      h1 {
+        width: 300px;
+        font-size: 30px; /* Adjust this value to change the font size */
+        text-align: center;
+      }
+
+      .slide-out-panel {
+        position: fixed;
+        top: 0;
+        right: -1500px; /* Adjust this value to match the width of the panel */
+        width: 1500px;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        z-index: 1001;
+        transition: right 1.0s ease;
+        overflow-y: auto; /* Added to make the panel scrollable if content overflows */
+        padding-top: 200px; /* Adjust this value based on the height of your header */
+      }
+
+      .slide-out-panel.open {
+        right: 0;
+        background-color: LightGray;
+      }
+
+      .open-panel-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1002;
+      }
+
+      #content {
+        margin-top: 200px; /* Adjust this value based on the height of your header */
+        padding: 20px;
+      }
+
+      iframe {
+        width: 100%;
+        height: calc(100vh - 220px); /* Adjust this value based on the height of your header and padding */
+        border: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-slate-900">
+    <div id="header">
+      <img src="https://cdn.worldvectorlogo.com/logos/university-of-utah-health-care.svg" class="logo" />
+      <h1>AMAZON Q NLQ Integration Demo</h1>
+    </div>
+
+    <button class="open-panel-button" onclick="togglePanel()">ADEPT NLQ</button>
+
+    <div id="content">
+      <iframe src="https://www.eoncollective.com/" title="University of Utah Hospital"></iframe>
+    </div>
+
+    <div id="slideOutPanel" class="slide-out-panel">
+      <div id="app">
+        <!-- Slide-out panel content goes here -->
+      </div>
+    </div>
+
+    <script>
+      function togglePanel() {
+        const panel = document.getElementById('slideOutPanel');
+        panel.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>
